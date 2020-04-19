@@ -12,7 +12,7 @@ function pad(n, width, z) {
 function updateClock() {
     let now = new Date();
     clockTimeText.innerHTML = `${pad(now.getHours(), 2)}:${pad(now.getMinutes(), 2)}`
-    clockDateText.innerText = `${now.getFullYear()}. ${pad(now.getMonth(), 2)}. ${pad(now.getDate(), 2)}. ${dayOfWeek[now.getDay()]}`
+    clockDateText.innerText = `${now.getFullYear()}. ${pad(now.getMonth() + 1, 2)}. ${pad(now.getDate(), 2)}. ${dayOfWeek[now.getDay()]}`
     setTimeout(updateClock, 15 * 1000)
 }
 
