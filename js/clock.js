@@ -13,7 +13,7 @@ function updateClock() {
     let now = new Date();
     clockTimeText.innerHTML = `${pad(now.getHours(), 2)}:${pad(now.getMinutes(), 2)}`
     clockDateText.innerText = `${now.getFullYear()}. ${pad(now.getMonth() + 1, 2)}. ${pad(now.getDate(), 2)}. ${dayOfWeek[now.getDay()]}`
-    setTimeout(updateClock, 15 * 1000)
 }
 
-updateClock()
+updateClock();
+setInterval(updateClock, 15 * 1000);

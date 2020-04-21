@@ -8,7 +8,8 @@ Use with [Lively Wallpaper software](https://github.com/rocksdanister/lively) to
 ## Features
  - 30FPS lock to reduce gpu usage.
  - 11 Customisation parameters, using [Lively's ipc](https://github.com/rocksdanister/lively/wiki/Web-Guide-IV-:-Interaction)
- - Modernish clock
+ - Digital clock in the middle
+ - Weather info on top right
 ## Credits
  [Heartfelt](https://www.shadertoy.com/view/ltffzl) shader by BigWIngs
  
@@ -16,4 +17,4 @@ Use with [Lively Wallpaper software](https://github.com/rocksdanister/lively) to
 
  [Lexend Giga font](https://fonts.google.com/specimen/Lexend+Giga) by Lexend Project on Google Fonts
 
- Clock by [akosnad](https://github.com/akosnad)
+ Widgets by [akosnad](https://github.com/akosnad)

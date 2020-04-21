@@ -14,21 +14,25 @@ canvas {
     src: url('fonts/LexendGiga-Regular.ttf') format('truetype');
 }
 
+.widget {
+    color: white;
+    font-family: 'LexendGiga';
+    font-weight: normal;
+    user-select: none;
+}
+
+.widget * {
+    margin: 0;
+    text-shadow: 0 0 15px black;
+}
+
 .clock {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
-    font-family: 'LexendGiga';
-    font-weight: normal;
-    user-select: none;
-    animation: slide-in-blurred-top 5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-}
-
-.clock * {
-    margin: 0;
+    animation: clock-slide-in 5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 .clock h2 {
@@ -36,7 +40,29 @@ canvas {
     font-size: small;
 }
 
-@keyframes slide-in-blurred-top {
+.weather {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 2em;
+    padding-top: 1.5em;
+    text-align: right;
+    animation: weather-slide-in 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.weather h1 #weatherIcon {
+    font-size: .7em;
+    margin-right: -.2em;
+    transform: translate(0, -.1em);
+}
+
+.disabled {
+    display: none;
+}
+
+/* Animations */
+
+@keyframes clock-slide-in {
     0% {
         transform: translate(-50%, -1000px) scaleY(2.5) scaleX(0.2);
         transform-origin: 50% 0%;
@@ -45,6 +71,21 @@ canvas {
     }
     100% {
         transform: translate(-50%, -50%) scaleY(1) scaleX(1);
+        transform-origin: 50% 50%;
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes weather-slide-in {
+    0% {
+        transform: translate(500px, 0) scaleY(2.5) scaleX(0.2);
+        transform-origin: 50% 0%;
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) scaleY(1) scaleX(1);
         transform-origin: 50% 50%;
         filter: blur(0);
         opacity: 1;

@@ -74,5 +74,15 @@
     "type": "checkbox",
     "value": true,
     "text": "30FPS Lock"
+  },
+  "weatherCityCode": {
+    "text": "OpenWeather City Code",
+    "type": "textbox",
+    "value": ""
+  },
+  "weatherApiKey": {
+    "text": "OpenWeather API key",
+    "type": "textbox",
+    "value": ""
   }
 }

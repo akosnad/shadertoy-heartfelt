@@ -1,5 +1,6 @@
 <head>
-  <link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="node_modules/weather-icons/css/weather-icons.css">
 </head>
 
 <body>
@@ -8,14 +9,30 @@
   class="glslCanvas"
   data-fragment-url="shaders\heartfelt.frag"
   data-textures="textures\city.jpg"></canvas>
-  <div class="clock">
+  <div class="clock widget">
     <h1 id="clockTimeText"></h1>
     <h2 id="clockDateText"></h2>
   </div>
+  <div class="weather widget">
+    <h1>
+			<span id="weatherIcon"></span>
+			<span id="weatherTemp"></span>
+		</h1>
+		<h5 id="weatherHiLoForecast" class="disabled">
+			<span class="wi wi-up"></span>
+			<span id="weatherHigh"></span>
+			<span class="wi wi-down"></span>
+			<span id="weatherLow"></span>
+		</h5>
+		<h4 id="weatherCity"></h4>
+  </div>
 </body>
 
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/moment/moment.js"></script>
 <script src="js/GlslCanvas.js"></script>
 <script src="js/clock.js"></script>
+<script src="js/weather.js"></script>
 
 <script type="text/javascript">
 
@@ -105,7 +122,19 @@ function livelyPropertyListener(name, val)
       {
         responseTime = -1;
       }
-      break;     
+      break;
+    case "weatherCityCode":
+      weatherCityCode = val;
+      updateWeather();
+      break;
+    case "weatherApiKey":
+      weatherApiKey = val;
+      updateWeather();
+      break;
+    case "weatherUpdateMinutes":
+      weatherUpdateMinutes = val;
+      weatherInit();
+      break;
   }
 }
 

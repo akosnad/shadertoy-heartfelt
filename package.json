@@ -1,0 +1,21 @@
+{
+  "name": "shadertoy-heartfelt",
+  "version": "1.0.0",
+  "description": "Shadertoy Heartfelt shader port with HTML widgets.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akosnad/shadertoy-heartfelt.git"
+  },
+  "author": "BigWIngs, widgets: akosnad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akosnad/shadertoy-heartfelt/issues"
+  },
+  "homepage": "https://github.com/akosnad/shadertoy-heartfelt#readme",
+  "dependencies": {
+    "jquery": "^3.5.0",
+    "moment": "^2.24.0",
+    "weather-icons": "^1.3.2"
+  }
+}
